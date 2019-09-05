@@ -1,0 +1,40 @@
+function firstDiffBit(a, b) {
+    //tạo một hàm chuyển biểu diễn số nhị phân với return là 1 string biểu diễn số nhị phân
+    //chuyển string sang array và đảo ngược lại.
+    //so sánh độ dài 2 array, nếu array nào ngắn hơn thì push thêm phần tử 0 vào cho bằng độ dài.
+    //chạy vòng for trong array dài hơn
+    //xét từng phần từ trong 2 array.
+    //nếu index nào khác nhau return index
+    //nếu 2 array giống nhau return -1
+
+    var arrayA = addBinary(a).split('').reverse();
+    // console.log(arrayA)
+    var arrayB = addBinary(b).split('').reverse();
+    // console.log(arrayB)
+    if (arrayA.length > arrayB.length) {
+        var arrLength = arrayA.length;
+        while (arrayB.length < arrLength){
+            arrayB.push('0');
+        }
+    } else {
+        arrLength = arrayB.length;
+        while (arrayA.length < arrLength){
+            arrayA.push('0');
+        }
+    }
+    for (var i = 0; i < arrLength; i++) {
+        if (arrayA[i] != arrayB[i]) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+function addBinary(a) {
+    var binary = '';
+    while (a > 0) {
+        binary = (a % 2) + binary;
+        a = Math.floor(a / 2);
+    }
+    return binary;
+}
