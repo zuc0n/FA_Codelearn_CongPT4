@@ -1,0 +1,16 @@
+function candles(a, b) {
+    //tạo một biến là nến, một biến là sáp
+    //sau khi cháy a => sáp = a
+    //mỗi lần cháy, số nến = số nến ban đầu + số sáp/b
+    //số sáp còn lại = số sát/b + phần dư của số sát/b
+    //chạy vòng lặp => số sáp = b
+    //return số candles là đáp án cần tìm 
+    let candles = a;
+    let leftOver = a;
+
+    while (leftOver >= b) {
+        candles += Math.floor(leftOver / b);
+        leftOver = Math.floor(leftOver / b) + leftOver % b 
+    }
+    return candles;
+}
