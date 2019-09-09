@@ -1,0 +1,16 @@
+function depositProfit(deposit, rate, threshold){
+    //tạo một biến là năm, gắn = 0
+    //cho chạy vòng while từ deposit -> threshold
+    //lãi xuất bằng deposit nhân vs tỷ lệ 
+    //deposit qua mỗi năm sẽ += interest
+    //sau đó tăng year lên 1
+    
+    var years = 0;
+    
+    while(deposit < threshold) {
+        let interest = (deposit*rate)/100;
+        deposit += interest;
+        years++
+    }
+    return years;
+}
