@@ -1,0 +1,20 @@
+function nonZeros(v, a){
+    //tạo một biến là tổng của các chữ số trước khi bỏ 0;
+    //taọ một biến là tổng của các chữ số sau khi bỏ 0;
+    //nếu 2 biến đấy bằng nhau : true ? false
+    let n = v + a;
+    n = n.toString().replace(/0/g, "");
+    let m = removeZeros(v,a);
+    if (parseInt(n) === m) {
+        return "YES"
+    } else {
+        return "NO"
+    }
+
+}
+
+function removeZeros(a,b){
+    a = a.toString().replace(/0/g, '');
+    b = b.toString().replace(/0/g, '');
+    return c = parseInt(a) + parseInt(b);
+}
