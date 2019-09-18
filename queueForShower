@@ -1,0 +1,25 @@
+function queueForShower(students, timetable) {
+    let minutes = 0;
+    for (let i = 0; i < timetable.length; i++) {
+        for (let j = 0; j < students.length; j++) {
+            if (minutes + students[j] <= timetable[i][0]) {
+                minutes += students[j];
+                students.splice(j, 1);
+                j = -1;
+            }
+        }
+        // console.log(students, minutes)
+
+        if (students.length > 0) {
+            minutes = timetable[i][1];
+        }
+    }
+
+    if (students.length > 0) {
+        for (let k = 0; k < students.length; k++) {
+            minutes += students[k];
+        }
+    }
+    
+    return minutes;
+}
