@@ -1,0 +1,18 @@
+//Tạo 1 mảng cấu tạo từ a,b,c
+//sort lại mảng theo thứ tự tăng dần
+//Đk để tạo thành tam giác a + b > c 
+//nếu k thoả mãn đk thì a++ 
+//số lần a++ lên sẽ là đáp án bài
+
+function makeTriangle(a, b, c) {
+    let arr = [a, b, c];
+    arr.sort((a, b) => a - b);
+    let result = 0;
+
+    while (arr[0] + arr[1] <= arr[2]) {
+        arr[0]++
+        result++
+    };
+
+    return result;
+}
