@@ -1,0 +1,10 @@
+function onesAndZeros(s){
+    //nếu trong string s có 01 hoặc 10
+    //thay thế 10 và 01 bằng string rỗng
+    //trả về chiều dài của string = kết quả
+    while(s.includes('01') || s.includes('10')){
+        s = s.replace(/01/g, '');
+        s = s.replace(/10/g, '');
+    }
+    return s.length;
+}
