@@ -1,0 +1,18 @@
+function generousMan(n, m) {
+    let turn = 0;
+    while (true) {
+        turn++;
+        if (n - turn >= 0) {
+            n = n - turn;
+        } else {
+            return "Van";
+        };
+        
+        turn++
+        if (m - turn >= 0) {
+            m = m - turn;
+        } else {
+            return "Viet"
+        };
+    };
+}
