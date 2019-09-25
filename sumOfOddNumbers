@@ -1,0 +1,10 @@
+function sumOfOddNumbers(a, b){
+    let result = 0;
+    for (let i = a + 1; i < b; i++) {
+        if (i % 2 != 0) {
+            result += i;
+            result %= 10000007;
+        }
+    }
+    return result;
+}
