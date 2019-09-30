@@ -1,0 +1,41 @@
+function rPN(input) {
+    let i = 0;
+    let result = [];
+    let operator = ['+', '-', '*', '/'];
+    while (i <= input.length) {
+        let item = input[i];
+        let index = operator.indexOf(item);
+
+        if (index < 0) {
+            result.push(item);
+        } else {
+            if (index == 0) {
+                let a = parseInt(result.splice(-1)[0]);
+                let b = parseInt(result.splice(-1)[0]);
+                result.push(a + b);
+            };
+
+            if (index == 1) {
+                let a = parseInt(result.splice(-1)[0]);
+                let b = parseInt(result.splice(-1)[0]);
+                result.push(b - a);
+            };
+
+            if (index == 2) {
+                let a = parseInt(result.splice(-1)[0]);
+                let b = parseInt(result.splice(-1)[0]);
+                result.push(a * b);
+            };
+            
+            if (index == 3) {
+                let a = parseInt(result.splice(-1)[0]);
+                let b = parseInt(result.splice(-1)[0]);
+                result.push(b / a);
+            };
+        }
+
+        i++
+    }
+
+    return parseInt(result[0]);
+}
